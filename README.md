@@ -73,6 +73,8 @@ alarm\_clock.py
 ├── stop\_alarm()    # Stops alarm and resets UI
 
 ```
+
+
 🙌 Author
 
 Made by **Robin Arulmanikam**
