@@ -1,14 +1,12 @@
 import tkinter as tk
 import time
-import winsound  # Works only on Windows
+import winsound  
 
-# Tkinter setup
 root = tk.Tk()
-root.title("⏰ Simple Alarm Clock")
+root.title("Simple Alarm Clock")
 root.geometry("400x300")
 root.config(bg="#f0f0f0")
 
-# Global alarm state
 alarm_time = ""
 is_ringing = False
 
@@ -25,11 +23,10 @@ def update_clock():
 def start_alarm():
     global is_ringing
     is_ringing = True
-    status_label.config(text="🔔 Alarm Ringing!", fg="red")
+    status_label.config(text="Alarm Ringing!", fg="red")
     flash_bg()
     play_beep()
-
-# Flashing background loop
+    
 def flash_bg():
     if is_ringing:
         current_color = root.cget("bg")
@@ -55,9 +52,8 @@ def set_alarm():
         is_ringing = False
         status_label.config(text=f"Alarm Set for {alarm_time}", fg="green")
     except ValueError:
-        status_label.config(text="❌ Invalid format! Use HH:MM:SS", fg="red")
+        status_label.config(text="Invalid format! Use HH:MM:SS", fg="red")
 
-# Stop alarm
 def stop_alarm():
     global alarm_time, is_ringing
     alarm_time = ""
@@ -65,7 +61,6 @@ def stop_alarm():
     status_label.config(text="Alarm Stopped", fg="blue")
     root.config(bg="#f0f0f0")
 
-# GUI Elements
 tk.Label(root, text="Set Alarm (HH:MM:SS)", font=("Arial", 12), bg="#f0f0f0").pack(pady=10)
 
 alarm_entry = tk.Entry(root, font=("Arial", 14), justify="center")
@@ -80,7 +75,6 @@ clock_label.pack(pady=10)
 status_label = tk.Label(root, text="", font=("Arial", 12), bg="#f0f0f0")
 status_label.pack()
 
-# Start clock
 update_clock()
 
 root.mainloop()
