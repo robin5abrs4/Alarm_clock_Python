@@ -60,21 +60,6 @@ The interface also flashes to visually notify the user.
 
 ---
 
-## 🛠️ Code Structure
-
-````
-
-alarm\_clock.py
-├── update\_clock()  # Updates clock and checks alarm
-├── start\_alarm()   # Starts alarm sound and flashing
-├── flash\_bg()      # Alternates window background color
-├── play\_beep()     # Plays beep sound repeatedly
-├── set\_alarm()     # Validates and sets alarm time
-├── stop\_alarm()    # Stops alarm and resets UI
-
-```
-
-
 🙌 Author
 
 Made by **Robin Arulmanikam**
